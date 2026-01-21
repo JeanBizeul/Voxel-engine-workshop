@@ -6,7 +6,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 find_package(OpenGL REQUIRED)
 
-add_subfolder(vendor)
+add_subdirectory(vendor)
 
 add_library(deps STATIC)
 
@@ -21,9 +21,11 @@ target_link_libraries(deps
 
 target_include_directories(deps
     PUBLIC
+        vendor/                 # For imgui & logger
         vendor/glad/include
         vendor/glm
-        vendor/
         vendor/glfw/include
-        vendor/logger
 )
+
+# Add Hello-Triangle project
+add_subdirectory(Hello-Triangle)

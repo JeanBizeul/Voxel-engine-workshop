@@ -8,7 +8,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 find_package(OpenGL REQUIRED)
 
-add_subdirectory(../) # Retreive dependencies from deps project
+# deps library is now available from parent CMakeLists.txt
 
 target_link_libraries(hello-triangle PRIVATE deps)
 
