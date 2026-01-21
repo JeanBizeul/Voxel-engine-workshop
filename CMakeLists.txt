@@ -8,5 +8,22 @@ find_package(OpenGL REQUIRED)
 
 add_subfolder(vendor)
 
-add_library(deps INTERFACE)
+add_library(deps STATIC)
 
+target_link_libraries(deps
+    PRIVATE
+        glad
+        glfw
+        imgui
+        glm::glm
+        OpenGL::GL
+)
+
+target_include_directories(deps
+    PUBLIC
+        vendor/glad/include
+        vendor/glm
+        vendor/
+        vendor/glfw/include
+        vendor/logger
+)
