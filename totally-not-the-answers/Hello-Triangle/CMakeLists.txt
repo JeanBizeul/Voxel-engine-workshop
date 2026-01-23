@@ -10,7 +10,7 @@ find_package(OpenGL REQUIRED)
 
 # deps library is now available from parent CMakeLists.txt
 
-target_link_libraries(hello-triangle-answer PRIVATE deps)
+target_link_libraries(hello-triangle-answer PRIVATE deps opengl-utils)
 
 target_include_directories(hello-triangle-answer
     PRIVATE
