@@ -21,7 +21,7 @@ target_link_libraries(deps
 
 target_include_directories(deps
     PUBLIC
-        vendor/                 # For imgui & logger
+        vendor/                 # For imgui, logger & stb libs
         vendor/glad/include
         vendor/glm
         vendor/glfw/include
@@ -31,4 +31,4 @@ target_include_directories(deps
 add_subdirectory(Hello-Triangle)
 
 # Answers
-add_subdirectory(totally-not-the-answers/Hello-Triangle)
+add_subdirectory(totally-not-the-answers/)
