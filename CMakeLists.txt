@@ -27,5 +27,8 @@ target_include_directories(deps
         vendor/glfw/include
 )
 
-# Add Hello-Triangle project
+# Your Projects
 add_subdirectory(Hello-Triangle)
+
+# Answers
+add_subdirectory(totally-not-the-answers/Hello-Triangle)

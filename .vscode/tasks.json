@@ -100,6 +100,50 @@
             },
             "problemMatcher": [],
             "dependsOn": ["CMake: Build Hello-Triangle"]
+        },
+        {
+            "label": "CMake: Build Hello-Triangle-Answer",
+            "type": "shell",
+            "command": "cmake",
+            "args": [
+                "--build",
+                "${workspaceFolder}/build",
+                "--config",
+                "Debug",
+                "--target",
+                "hello-triangle-answer",
+                "-j",
+                "4"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "group": "build",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared"
+            },
+            "problemMatcher": ["$gcc"],
+            "dependsOn": ["CMake: Configure Hello-Triangle"]
+        },
+        {
+            "label": "Run: Hello-Triangle-Answer",
+            "type": "shell",
+            "command": "${workspaceFolder}/build/totally-not-the-answers/Hello-Triangle/hello-triangle-answer",
+            "options": {
+                "cwd": "${workspaceFolder}/totally-not-the-answers/Hello-Triangle"
+            },
+            "group": "test",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": true,
+                "panel": "shared"
+            },
+            "problemMatcher": [],
+            "dependsOn": ["CMake: Build Hello-Triangle-Answer"]
         }
     ]
 }
