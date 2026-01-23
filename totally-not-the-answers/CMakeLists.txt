@@ -29,3 +29,4 @@ target_link_libraries(opengl-utils
 
 # Add answers folders
 add_subdirectory(Hello-Triangle)
+add_subdirectory(Hello-Triangle-clean)

@@ -60,6 +60,36 @@
             ],
             "preLaunchTask": "CMake: Build Hello-Triangle-Answer",
             "miDebuggerPath": "/usr/bin/gdb"
+        },
+        {
+            "name": "Debug: Hello-Triangle-Answer-Clean",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/build/totally-not-the-answers/Hello-Triangle-clean/hello-triangle-answer-clean",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}/totally-not-the-answers/Hello-Triangle-clean",
+            "environment": [
+                {
+                    "name": "LIBGL_ALWAYS_SOFTWARE",
+                    "value": "0"
+                },
+                {
+                    "name": "WAYLAND_DISPLAY",
+                    "value": "${env:WAYLAND_DISPLAY}"
+                }
+            ],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "preLaunchTask": "CMake: Build Hello-Triangle-Answer-Clean",
+            "miDebuggerPath": "/usr/bin/gdb"
         }
     ]
 }
