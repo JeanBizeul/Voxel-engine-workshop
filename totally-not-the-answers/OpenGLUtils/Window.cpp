@@ -15,7 +15,7 @@ OpenGLUtils::Window::Window(size_t width, size_t height, std::string name)
     // Setup glfw window
     if (!glfwInit())
         throw std::runtime_error("Failed to initialize GLFW");
-    
+
     glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
     glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
     glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
@@ -23,14 +23,14 @@ OpenGLUtils::Window::Window(size_t width, size_t height, std::string name)
     _windowHandle = glfwCreateWindow(width, height, name.c_str(), nullptr, nullptr);
     if (!_windowHandle)
         throw std::runtime_error("Failed to create GLFW window");
-    
+
     glfwMakeContextCurrent(_windowHandle);
     glfwSwapInterval(1); // vsync
 
     // Load all openGL functions
     if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
         throw std::runtime_error("Failed to initialize GLAD");
-    
+
     // Setup Dear ImGUI
     IMGUI_CHECKVERSION();
     ImGui::CreateContext();
@@ -72,7 +72,7 @@ void OpenGLUtils::Window::beginFrame()
 
     // Need to reset some stuff as imgui may have changed them
     glDisable(GL_DEPTH_TEST);             // 2D overlay
-    glEnable(GL_BLEND);                   
+    glEnable(GL_BLEND);
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 }
 

@@ -9,7 +9,16 @@
             "args": [],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}/Hello-Triangle",
-            "environment": [],
+            "environment": [
+                {
+                    "name": "LIBGL_ALWAYS_SOFTWARE",
+                    "value": "0"
+                },
+                {
+                    "name": "WAYLAND_DISPLAY",
+                    "value": "${env:WAYLAND_DISPLAY}"
+                }
+            ],
             "externalConsole": false,
             "MIMode": "gdb",
             "setupCommands": [
@@ -30,7 +39,16 @@
             "args": [],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}/totally-not-the-answers/Hello-Triangle",
-            "environment": [],
+            "environment": [
+                {
+                    "name": "LIBGL_ALWAYS_SOFTWARE",
+                    "value": "0"
+                },
+                {
+                    "name": "WAYLAND_DISPLAY",
+                    "value": "${env:WAYLAND_DISPLAY}"
+                }
+            ],
             "externalConsole": false,
             "MIMode": "gdb",
             "setupCommands": [
