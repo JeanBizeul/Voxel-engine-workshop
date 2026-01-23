@@ -55,36 +55,6 @@
             "dependsOn": ["CMake: Configure Hello-Triangle"]
         },
         {
-            "label": "CMake: Clean Hello-Triangle",
-            "type": "shell",
-            "command": "rm",
-            "args": [
-                "-rf",
-                "${workspaceFolder}/build"
-            ],
-            "options": {
-                "cwd": "${workspaceFolder}"
-            },
-            "group": "build",
-            "presentation": {
-                "echo": true,
-                "reveal": "always",
-                "focus": false,
-                "panel": "shared"
-            },
-            "problemMatcher": []
-        },
-        {
-            "label": "CMake: Rebuild Hello-Triangle",
-            "dependsOn": [
-                "CMake: Clean Hello-Triangle",
-                "CMake: Build Hello-Triangle"
-            ],
-            "dependsOrder": "sequence",
-            "group": "build",
-            "problemMatcher": []
-        },
-        {
             "label": "Run: Hello-Triangle",
             "type": "shell",
             "command": "${workspaceFolder}/build/Hello-Triangle/hello-triangle",
@@ -144,50 +114,6 @@
             },
             "problemMatcher": [],
             "dependsOn": ["CMake: Build Hello-Triangle-Answer"]
-        },
-        {
-            "label": "CMake: Build Hello-Triangle-Answer-Clean",
-            "type": "shell",
-            "command": "cmake",
-            "args": [
-                "--build",
-                "${workspaceFolder}/build",
-                "--config",
-                "Debug",
-                "--target",
-                "hello-triangle-answer-clean",
-                "-j",
-                "4"
-            ],
-            "options": {
-                "cwd": "${workspaceFolder}"
-            },
-            "group": "build",
-            "presentation": {
-                "echo": true,
-                "reveal": "always",
-                "focus": false,
-                "panel": "shared"
-            },
-            "problemMatcher": ["$gcc"],
-            "dependsOn": ["CMake: Configure Hello-Triangle"]
-        },
-        {
-            "label": "Run: Hello-Triangle-Answer-Clean",
-            "type": "shell",
-            "command": "${workspaceFolder}/build/totally-not-the-answers/Hello-Triangle-clean/hello-triangle-answer-clean",
-            "options": {
-                "cwd": "${workspaceFolder}/totally-not-the-answers/Hello-Triangle-clean"
-            },
-            "group": "test",
-            "presentation": {
-                "echo": true,
-                "reveal": "always",
-                "focus": true,
-                "panel": "shared"
-            },
-            "problemMatcher": [],
-            "dependsOn": ["CMake: Build Hello-Triangle-Answer-Clean"]
         }
     ]
 }
